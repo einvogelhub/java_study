@@ -1,2 +1,3 @@
 .idea/
-src/workspace
+/src/workspace
+/out/production/school/workspace/
