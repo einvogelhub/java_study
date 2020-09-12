@@ -47,21 +47,42 @@ public class FileWorker {
 
     public HashSet<String> fileWordsHashSet(ArrayList<String> fileLines){
 
-        HashSet<String> wordsHashSet = new HashSet<>();
+        HashSet<String> setWords = new HashSet<>();
         for (String line: fileLines){
              String[] words = line.split(" ");
-             wordsHashSet.addAll(Arrays.asList(words));
+            setWords.addAll(Arrays.asList(words));
         }
 
 
-        return wordsHashSet;
+        return setWords;
     }
 
     public ArrayList<String> sortWordsForLength(HashSet<String> setWords){
         String[] words = new String[setWords.size()];
         setWords.toArray(words);
         Arrays.sort(words, Comparator.comparingInt(String::length));
-        ArrayList<String> arrayWords = new ArrayList<String>(Arrays.asList(words));
-        return arrayWords;
+        ArrayList<String> sortedArrayWords = new ArrayList<String>(Arrays.asList(words));
+        return sortedArrayWords;
+    }
+
+    public HashMap<String, Integer> countDifferentWordsQuantity(HashSet<String> setWords,
+                                                                ArrayList<String> fileLines){
+
+        HashMap<String, Integer> wordsQuantityhashMap = new HashMap<>();
+
+        for (String word: setWords){
+            int wordQuantity = 0;
+            for (String line: fileLines){
+
+                if (line.contains(word)){
+                    wordQuantity ++;
+                }
+
+            }
+            wordsQuantityhashMap.put(word, wordQuantity);
+        }
+
+        return wordsQuantityhashMap;
+
     }
 }
