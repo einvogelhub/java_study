@@ -1,4 +1,4 @@
-package sber.lesson_1.homework.task_3;
+package sber.lesson_1.homework.temperatureConverter;
 
 public class TemperatureConverter {
 

@@ -1,4 +1,4 @@
-package sber.lesson_1.homework.task_1;
+package sber.lesson_1.homework.binarySearchAndBubbleSort;
 
 import java.util.Arrays;
 
