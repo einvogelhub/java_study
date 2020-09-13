@@ -68,7 +68,7 @@ public class FileWorker {
     public HashMap<String, Integer> countDifferentWordsQuantity(HashSet<String> setWords,
                                                                 ArrayList<String> fileLines){
 
-        HashMap<String, Integer> wordsQuantityhashMap = new HashMap<>();
+        HashMap<String, Integer> wordsQuantityHashMap = new HashMap<>();
 
         for (String word: setWords){
             int wordQuantity = 0;
@@ -79,10 +79,30 @@ public class FileWorker {
                 }
 
             }
-            wordsQuantityhashMap.put(word, wordQuantity);
+            wordsQuantityHashMap.put(word, wordQuantity);
         }
 
-        return wordsQuantityhashMap;
+        return wordsQuantityHashMap;
 
     }
+
+    public ArrayList<String> reverseFileLines(ArrayList<String> fileLines){
+        ArrayList<String> reversedFileLines = new ArrayList<>(fileLines);
+        Collections.reverse(reversedFileLines);
+        return reversedFileLines;
+    }
+
+    public void reverseIterator(ArrayList<String> fileLines){
+
+        ReverseIterator<String> overrideIteratorFileLines = new ReverseIterator<String>(fileLines);
+        for(String lang : overrideIteratorFileLines) {
+            System.out.println(lang);
+        }
+    }
+
+    public String getLineFile(int index, ArrayList<String>fileLines){
+        return fileLines.get(index);
+
+    }
+
 }
