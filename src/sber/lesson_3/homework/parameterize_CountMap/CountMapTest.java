@@ -1,6 +1,5 @@
 package sber.lesson_3.homework.parameterize_CountMap;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 public class CountMapTest {
